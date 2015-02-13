@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.5">
+	<xs:complexType name="ID_ATTR_STRING">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="_Id" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="RootNode">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="A_str" type="ID_ATTR_STRING"/>
+				<xs:element name="B_str" type="ID_ATTR_STRING"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

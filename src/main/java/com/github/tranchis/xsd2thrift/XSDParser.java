@@ -460,6 +460,12 @@ public class XSDParser implements ErrorHandler {
         XSAttributeDecl decl;
         Iterator<? extends XSAttGroupDecl> itt;
 
+        XSSimpleType simpletype = type.getContentType().asSimpleType();
+        if(simpletype != null){
+            String typeName = processSimpleType(simpletype, simpletype.getName());
+            st.addField("value", typeName, false, false, null, xsdMapping);
+        }
+        
         particle = type.getContentType().asParticle();
         if (particle != null) {
             write(st, particle.getTerm(), true, xss);
